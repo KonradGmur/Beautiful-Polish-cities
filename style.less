@@ -1,0 +1,160 @@
+@body-background-image:url('img/tape.jpg');
+@body-font-size: 20px;
+@body-color: #efefef;
+@container-margin-left: auto;
+@container-margin-right: auto;
+@container-width: 1000px;
+@container-text-align: center;
+@container-padding: 0;
+@container-margin-bottom: 25px;
+
+@h1-font-size: 35px;
+@h1-font-weight: 400;
+@h1-color: rgb(255, 155, 25);
+@h1-margin-top: 45px;
+@h1-margin-bottom: 30px;
+@h1-letter-spacing: 10px;
+@h1-text-transform: uppercase;
+
+@card-display: inline-block;
+@card-width: 480px;
+@card-padding: 5px;
+@card-p-margin-top: 10px;
+
+@a-link-color: @body-color;
+@a-link-text-decoration: none;
+
+@overlay-position: relative;
+@overlay-overflow: hidden;
+@overlay-img-width: 450px;
+@overlay-img-height: 278px;
+@overlay-img-border-radius: 5px;
+@overlay-link-position: absolute;
+@overlay-link-display: block;
+@overlay-link-height: 65px;
+@overlay-link-background-color: #111;
+@overlay-link-left: 15px;
+@overlay-link-bottom: 20px;
+@overlay-link-opacity: 0;
+@overlay-link-hover-opacity: 0.8;
+
+@about_me-button-hover-cursor:pointer;
+@about_me-button-hover-border:2px solid @h1-color;
+@footer-color:white;
+
+.img1-10 {
+    transition: all 0.5s ease-in-out;
+}
+
+.img1-10-hover {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.2);
+}
+
+.footer {
+    text-align: @container-text-align;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'Pattaya', sans-serif;
+    background-image: @body-background-image;
+    font-size: @body-font-size;
+    color: @body-color;
+
+    .container {
+        margin-left: @container-margin-left;
+        margin-right: @container-margin-right;
+        width: @container-width;
+        text-align: @container-text-align;
+        padding: @container-padding;
+        margin-bottom: @container-margin-bottom;
+
+        h1 {
+            font-family: 'Coiny', cursive;
+            font-size: @h1-font-size;
+            font-weight: @h1-font-weight;
+            color: @h1-color;
+            margin-top: @h1-margin-top;
+            margin-bottom: @h1-margin-bottom;
+            letter-spacing: @h1-letter-spacing;
+            text-transform: @h1-text-transform;
+        }
+
+        .card {
+            display: @card-display;
+            width: @card-width;
+            text-align: @container-text-align;
+            padding: @card-padding;
+
+            .card p {
+                padding: @card-padding;
+                margin-top: @card-p-margin-top;
+            }
+
+            .overlay {
+                position: @overlay-position;
+                overflow: @overlay-overflow;
+            }
+
+            .overlay img {
+                width: @overlay-img-width;
+                height: @overlay-img-height;
+                border-radius: @overlay-img-border-radius;
+                .img1-10();
+
+                &:hover {
+                    .img1-10-hover();
+                }
+            }
+
+            .overlay .link {
+                position: @overlay-link-position;
+                display: @overlay-link-display;
+                width: @overlay-img-width;
+                height: @overlay-link-height;
+                color: @body-color;
+                background-color: @overlay-link-background-color;
+                left: @overlay-link-left;
+                bottom: @overlay-link-bottom;
+                opacity: @overlay-link-opacity;
+            }
+
+            .overlay:hover .link {
+                opacity: @overlay-link-hover-opacity;
+            }
+
+        }
+
+        a:link {
+            color: @body-color;
+            text-decoration: @a-link-text-decoration;
+        }
+
+        a:hover {
+            color: @body-color;
+        }
+    }
+
+    footer {
+        .footer();
+
+        .about_me button {
+            background-color: @overlay-link-background-color;
+            color: @h1-color;
+            border-radius: @overlay-img-border-radius;
+
+            &:hover {
+                color: @footer-color;
+                background-color: @overlay-link-background-color;
+                border-radius: @overlay-img-border-radius;
+                cursor: @about_me-button-hover-cursor;
+                border-color: @overlay-link-background-color;
+                border:@about_me-button-hover-border;
+            }
+        }
+    }
+}
